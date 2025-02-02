@@ -1,9 +1,12 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import axios from 'axios';
+				import axios, { AxiosResponse } from 'axios';
 
-export const getMovies = async (page: number): Promise<any> => {
+interface MovieResponse {
+	data: any; // Ideally, you should replace 'any' with the actual type of the data
+}
+
+export const getMovies = async (page: number): Promise<MovieResponse> => {
 	try {
-		const response = await axios.get(`https://phimapi.com/danh-sach/phim-moi-cap-nhat`, {
+		const response: AxiosResponse<MovieResponse> = await axios.get(`https://phimapi.com/danh-sach/phim-moi-cap-nhat`, {
 			params: { page },
 		});
 		return response.data;

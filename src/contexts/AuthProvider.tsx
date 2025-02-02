@@ -1,10 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { getUserById } from "@/api/account/getAccount";
-// import { getAccount } from '@/app/apis/getProfile';
 import Provider from "@/utils/Provider";
 import {
-  useQuery,
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
@@ -23,11 +20,11 @@ interface AuthContextType {
   login: (tokens: { accessToken: string; refreshToken: string }) => void;
   logout: () => void;
   cartCount: number;
-  addToCart: (product: any) => void;
+  addToCart: (product: unknown) => void;
   clearCart: () => void;
-  dataProfile: any;
+  dataProfile: unknown;
   isLoading: boolean;
-  error: any;
+  error: unknown;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -52,7 +49,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     setCartCount(storedCart.length);
   }, []);
 
-  const addToCart = (product: any) => {
+  const addToCart = (product: unknown) => {
     const existingCart = JSON.parse(localStorage.getItem("cart") || "[]");
     const updatedCart = [...existingCart, product];
     localStorage.setItem("cart", JSON.stringify(updatedCart));
@@ -98,9 +95,9 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const userId =
     typeof window !== "undefined" ? localStorage.getItem("userId") : null;
 
-  const [dataProfile, setDataProfile] = useState<any>(null);
+  const [dataProfile, setDataProfile] = useState<unknown>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [error, setError] = useState<any>(null);
+  const [error, setError] = useState<unknown>(null);
 
   useEffect(() => {
     const fetchDataProfile = async () => {
