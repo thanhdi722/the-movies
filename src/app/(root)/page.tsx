@@ -32,10 +32,10 @@ export default function Home() {
   console.log("moviesAnime", moviesAnime)
   return (
     <main className="min-h-screen bg-[#121212]">
-      <MovieHome data={moviesNew} title="Phim mới cập nhật" loading={loadingNew} />
-      <MovieHome data={moviesAnime} title="Phim hoạt hình" loading={loading} />
-      <MovieHome data={moviesOdd} title="Phim lẻ" loading={loadingOdd} />
-      <MovieHome data={series} title="Phim bộ" loading={loadingSeries} />
+      <MovieHome data={moviesNew} title="Phim mới cập nhật" loading={loadingNew} linkPath="/movie-new" />
+      <MovieHome data={moviesAnime} title="Phim hoạt hình" loading={loading} linkPath="/movie-anime" />
+      <MovieHome data={moviesOdd} title="Phim lẻ" loading={loadingOdd} linkPath="/movie-odd" />
+      <MovieHome data={series} title="Phim bộ" loading={loadingSeries} linkPath="/movie-series" />
     </main>
   )
 }

@@ -8,7 +8,7 @@ import { SwiperOptions } from "swiper/types";
 import Link from "next/link";
 
 
-const MovieAnime = ({ data, title, loading }: { data: any, title: string, loading: boolean }) => {
+const MovieAnime = ({ data, title, loading, linkPath }: { data: any, title: string, loading: boolean, linkPath: string }) => {
     const CONFIG: SwiperOptions = {
         loop: false,
         speed: 1000,
@@ -41,7 +41,7 @@ const MovieAnime = ({ data, title, loading }: { data: any, title: string, loadin
         <div>
             <div className="flex justify-between items-center">
                 <h2 className="text-[15px] uppercase bg-[#ff7a10] leading-[34px] py-[9px] relative bg-gradient-to-r from-[#ff8a00] to-[#ff2070] bg-clip-text text-transparent box-decoration-clone font-[700] m-4">{title}</h2>
-                <h2 className="ttext-[15px] uppercase bg-[#ff7a10] leading-[34px] py-[9px] relative bg-gradient-to-r from-[#ff8a00] to-[#ff2070] bg-clip-text text-transparent box-decoration-clone font-[700] m-4">Xem tất cả</h2>
+                <Link href={linkPath} className="text-[15px] uppercase bg-[#ff7a10] leading-[34px] py-[9px] relative bg-gradient-to-r from-[#ff8a00] to-[#ff2070] bg-clip-text text-transparent box-decoration-clone font-[700] m-4">Xem tất cả</Link>
             </div>
             {loading ? (
                 <div className="flex space-x-4">

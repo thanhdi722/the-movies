@@ -23,24 +23,20 @@ const Header = () => {
                 <Link href="/" className="hover:text-white">
                     Trang chủ
                 </Link>
+                <Link href="/movie-new" className="hover:text-white">
+                    Phim mới cập nhật
+                </Link>
                 <Link href="/movie-anime" className="hover:text-white">
                     Phim hoạt hình
                 </Link>
-                <Link href="/phim-2d" className="hover:text-white">
-                    Phim 2D
+                <Link href="/movie-series" className="hover:text-white">
+                    Phim bộ
                 </Link>
-                <Link href="/movie-ova" className="hover:text-white">
-                    Movie-OVA
+                <Link href="/movie-odd" className="hover:text-white">
+                    Phim lẻ
                 </Link>
-                <Link href="/lich-phim" className="hover:text-white">
-                    Lịch phim
-                </Link>
-                <Link href="/hoan-thanh" className="hover:text-white">
-                    Hoàn thành
-                </Link>
-                <Link href="/thuyet-minh" className="hover:text-white">
-                    Thuyết minh
-                </Link>
+
+
             </div>
         </div>
     </nav></div>
