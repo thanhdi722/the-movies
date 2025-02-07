@@ -21,7 +21,7 @@ const CategoryAnime = ({ data, title, loading }: { data: any, title: string, loa
                 </div>
             ) : (
                 <div className="flex flex-wrap grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4">
-                    {(data?.data?.items === undefined ? data?.items : data?.data?.items)?.map((anime: any, index: number) => (
+                    {(data?.data?.items === undefined ? data?.items : data?.data?.items)?.slice(0, 9)?.map((anime: any, index: number) => (
                         <Link key={index} href={`/movieDetail/${anime?.slug}`}>
                             <div className="relative hover:scale-105 transition-all duration-300">
                                 <Image src={data?.data?.items === undefined ? `${anime?.thumb_url}` : `https://phimimg.com/${anime?.thumb_url}`} alt={anime?.name} width={500} height={200} className="w-full h-full object-cover" />

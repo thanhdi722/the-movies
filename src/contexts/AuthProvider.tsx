@@ -1,10 +1,7 @@
 "use client";
 import { getUserById } from "@/api/account/getAccount";
 import Provider from "@/utils/Provider";
-import {
-  QueryClient,
-  QueryClientProvider,
-} from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import React, {
   createContext,
@@ -79,13 +76,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const logout = () => {
     if (typeof window !== "undefined") {
-      console.log("Logging out...");
       localStorage.removeItem("accessToken");
       localStorage.removeItem("refreshToken");
       localStorage.removeItem("cart"); // Clear cart when logging out
       setIsAuthenticated(false);
       setCartCount(0);
-      console.log("Logged out successfully");
+
       router.push("/login"); // Navigate to login page immediately
     } else {
       console.error("Logout failed: window is undefined");
