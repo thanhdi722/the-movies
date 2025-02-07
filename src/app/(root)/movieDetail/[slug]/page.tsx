@@ -33,7 +33,7 @@ export default function AnimePage() {
     }
   };
   return (
-    <main className="min-h-screen bg-[#121212] p-4 md:p-6">
+    <main className="bg-[#121212] p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
         {selectedEpisode ? (
           <div className="space-y-4">
@@ -141,7 +141,7 @@ export default function AnimePage() {
               <button
                 key={ep.slug}
                 onClick={() => handleEpisodeClick(ep)}
-                className={`px-2 py-1 rounded-md ${
+                className={`px-2 py-1 rounded-md hover:bg-[#ff7a10] ${
                   selectedEpisode === ep.link_embed
                     ? "bg-[#ff7a10]"
                     : "bg-gray-500"
