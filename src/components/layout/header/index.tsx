@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { Search } from "lucide-react";
 import React, { useState, useEffect, useRef } from "react";
